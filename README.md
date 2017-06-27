@@ -1,0 +1,2 @@
+# nnabla-mnist
+NnablaでMNISTしてみるヅラ
