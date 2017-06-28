@@ -34,6 +34,7 @@ def main():
   data = InputData()
 
   for i in range(NUM_STEP):
+    # 100STEP毎にテスト実施
     if i % 100 == 0:
       l = 0
       a = 0
