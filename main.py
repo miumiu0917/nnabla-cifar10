@@ -54,8 +54,7 @@ def main():
 
 
 def convolution(x):
-  batch_size = x.shape[0]
-  x = x.reshape([batch_size, IMAGE_DEPTH, IMAGE_HEIGHT, IMAGE_WIDTH])
+  x = x.reshape([BATCH_SIZE, IMAGE_DEPTH, IMAGE_HEIGHT, IMAGE_WIDTH])
   with nn.parameter_scope("conv1"):
     output = PF.convolution(x, 16, (5, 5), stride=(2, 2), pad=(1, 1))
     output = F.relu(output)
@@ -68,7 +67,7 @@ def convolution(x):
     output = PF.convolution(output, 64, (3, 3), stride=(1, 1), pad=(1, 1))
     output = F.relu(output)
 
-  output = output.reshape([batch_size, int(output.size / BATCH_SIZE)])
+  output = output.reshape([BATCH_SIZE, int(output.size / BATCH_SIZE)])
 
   with nn.parameter_scope("fc1"):
     output = PF.affine(output, 1024)

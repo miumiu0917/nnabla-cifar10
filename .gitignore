@@ -1,2 +1,4 @@
-data/*
+data/*.bin
+data/*.txt
+data/*.html
 *.pyc
